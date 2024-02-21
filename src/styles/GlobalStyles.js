@@ -3,6 +3,21 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 :root {
   &, &.light-mode {
+
+
+
+  --bg-color:#f3f4f6;
+  --bg-color-second:#fff;
+  --color-primary: #1D24CA;
+  --color-accent:#2ed573
+  --font-color:#464749;
+  --font-color-second:#5c5c5c;
+  --font-color-three:#c2c2c2;
+
+
+
+
+
   /* Grey */
   --color-grey-0: #fff;
   --color-grey-50: #f9fafb;
@@ -16,20 +31,7 @@ const GlobalStyles = createGlobalStyle`
   --color-grey-800: #1f2937;
   --color-grey-900: #111827;
 
-  --color-blue-100: #e0f2fe;
-  --color-blue-700: #0369a1;
-  --color-green-100: #dcfce7;
-  --color-green-700: #15803d;
-  --color-yellow-100: #fef9c3;
-  --color-yellow-700: #a16207;
-  --color-silver-100: #e5e7eb;
-  --color-silver-700: #374151;
-  --color-indigo-100: #e0e7ff;
-  --color-indigo-700: #4338ca;
 
-  --color-red-100: #fee2e2;
-  --color-red-700: #b91c1c;
-  --color-red-800: #991b1b;
 
   --backdrop-color: rgba(255, 255, 255, 0.1);
 
@@ -81,14 +83,7 @@ const GlobalStyles = createGlobalStyle`
   }
   
   /* Indigo */
-  --color-brand-50: #eef2ff;
-  --color-brand-100: #e0e7ff;
-  --color-brand-200: #c7d2fe;
-  --color-brand-500: #6366f1;
-  --color-brand-600: #4f46e5;
-  --color-brand-700: #4338ca;
-  --color-brand-800: #3730a3;
-  --color-brand-900: #312e81;
+ 
   
   --border-radius-tiny: 3px;
   --border-radius-sm: 5px;
@@ -97,6 +92,16 @@ const GlobalStyles = createGlobalStyle`
 
 
 }
+
+
+
+@font-face {
+  font-family: IRANSans;
+  src: url('../../public/IRANSans/IRANSans.ttf');
+}
+
+
+
 
 *,
 *::before,
@@ -116,8 +121,8 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   color: var(--color-grey-700);
-
   transition: color 0.3s, background-color 0.3s;
+  background-color: var(--bg-color);
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
@@ -184,6 +189,7 @@ img {
   /* For dark mode */
   filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
 }
+
 
 `;
 
