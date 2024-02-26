@@ -1,10 +1,4 @@
 import styled from "styled-components"
-import '@babel/core'
-
-
-
-
-
 import "normalize.css"
 import GlobalStyles from "./styles/GlobalStyles"
 const StyleApp=styled.div`
@@ -19,7 +13,7 @@ const App = () => {
     <>
     
     <GlobalStyles/>
-    <StyleApp>App</StyleApp>
+    <StyleApp>APP Dev</StyleApp>
   
     </>
   )
