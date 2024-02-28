@@ -7,8 +7,8 @@ display: flex;
 justify-content: center;
 align-items: center;
   background-color: #f3f4f6;
-  height: 100%;
-  width: 50px;
+  height: 75px;
+  width: 75px;
   border-radius: 50%;
 `
 
