@@ -18,6 +18,7 @@ const sizes = {
     font-weight: 500;
 
   `,
+ 
   circle: css`
     font-size: 1.6rem;
     padding: 1.4rem;
