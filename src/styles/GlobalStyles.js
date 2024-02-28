@@ -89,6 +89,8 @@ const GlobalStyles = createGlobalStyle`
   --border-radius-sm: 5px;
   --border-radius-md: 7px;
   --border-radius-lg: 9px;
+  --border-radius-xl: 12px;
+  --border-radius-xxl: 15px;
 
 
 }
