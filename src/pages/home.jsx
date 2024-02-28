@@ -1,7 +1,11 @@
+import Hero from "../ui/Hero"
+
+
+
 
 const Home = () => {
   return (
-    <div>home</div>
+    <Hero />
   )
 }
 

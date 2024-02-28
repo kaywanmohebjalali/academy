@@ -11,7 +11,7 @@ display: none;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #d1d5db;
+    background-color: #fff;
     
   }
 `
