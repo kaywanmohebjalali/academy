@@ -1,7 +1,8 @@
+import TopBar from "./TopBar"
 
 const Header = () => {
   return (
-    <div>header</div>
+    <TopBar/>
   )
 }
 

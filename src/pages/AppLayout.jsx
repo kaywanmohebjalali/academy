@@ -17,7 +17,7 @@ const Container=styled.div`
 export const AppLayout = () => {
   return (
     <StyleAppLayout>
-    <Header/>
+      <Header/>
 
     <Main>
       <Container>
