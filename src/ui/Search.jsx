@@ -24,13 +24,13 @@ align-items: center;
 `
 
 const InputSearch =styled.input`
-  max-width: 86%;
   width: 200px;
   height: 100%;
+  font-size: 1.8rem;
   border: none;
   transition: all 0.6s ;
   background-color: #f3f4f6;
-  
+  margin-left: 1rem;
 
 
   &:focus{
@@ -57,19 +57,21 @@ align-items: center;
   border: none;
   outline: hidden;
   position: relative;
-  background-color: #c9cbce;
+  background-color: #f3f4f6;
 
 
 
 `
 
 const InputSearchModal =styled.input`
-  min-width: 400px;
+  min-width: 350px;
   width: 100%;
   height: 100%;
+  font-size: 1.8rem;
+  margin-left: 1rem;
   border: none;
   transition: all 0.6s ;
-  background-color: #c9cbce;
+  background-color: #f3f4f6;
 
 `
 
@@ -77,13 +79,7 @@ const InputSearchModal =styled.input`
 
 
 const IconSearch =styled(IoSearch)`
-  position: absolute;
-  left: 10px;
-  @media screen and (max-width: 1170px){
-  position: relative;
-  left: 0;
 
-}
 `
 
 
@@ -107,7 +103,7 @@ const Search = () => {
 
 
    {     widthWindow>=1170?<StyleSearch>
-      <InputSearch/>
+      <InputSearch placeholder="جستجو"/>
       <IconSearch size='2.5rem' color="#555"/>
       </StyleSearch>:
 
@@ -123,7 +119,7 @@ const Search = () => {
 </Modal.Open >
 <Modal.Window name='search'>
      <StyleSearchModal>
-      <InputSearchModal/>
+      <InputSearchModal placeholder="جستجو"/>
       <IconSearch size='2.5rem' color="#555"/>
       </StyleSearchModal>
 </Modal.Window>

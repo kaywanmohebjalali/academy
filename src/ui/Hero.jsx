@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import {FaPlay} from 'react-icons/fa'
+import Button from "../styles/Button"
 
-import Button from "./Button"
 
     const StyledHero = styled.div`
         height: 100dvh;
