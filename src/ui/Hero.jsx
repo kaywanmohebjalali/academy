@@ -16,13 +16,13 @@ const TextSection = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
-align-items: start;
+align-items: center;
 margin-right: 1rem;
-
-    max-width: 100%;
-    @media screen and (min-width: 820px){
-            max-width: 50%;
-            align-items: center;
+padding: 1rem .75rem;
+max-width: 100%;
+@media screen and (min-width: 820px){
+    max-width: 50%;
+    align-items: start;
         }
 `
 
@@ -62,6 +62,7 @@ const ButtonContainer = styled.div`
     @media screen and (min-width: 820px){
             flex-direction: row;
             margin: 4rem auto;
+            margin-right: 0;
         }
 `
 
