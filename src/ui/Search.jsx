@@ -5,6 +5,7 @@ import styled from "styled-components"
 const StyleSearch =styled.div`
 height: 100%;
 display: flex;
+justify-content: center;
 align-items: center;
   padding: 1rem;
   border-radius: 50px;
@@ -12,6 +13,12 @@ align-items: center;
   outline: hidden;
   position: relative;
   background-color: #f3f4f6;
+  @media screen and (max-width: 1170px){
+   width: 65px;
+   height: 65px;
+}
+
+
 `
 
 const InputSearch =styled.input`
@@ -28,11 +35,21 @@ const InputSearch =styled.input`
     max-width: 92%;
     width: 350px;
   }
+
+  @media screen and (max-width: 1170px){
+ 
+ display: none;
+}
 `
 
 const IconSearch =styled(IoSearch)`
   position: absolute;
   left: 10px;
+  @media screen and (max-width: 1170px){
+  position: relative;
+  left: 0;
+
+}
 `
 
 

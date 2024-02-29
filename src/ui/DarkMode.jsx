@@ -6,8 +6,8 @@ display: flex;
 justify-content: center;
 align-items: center;
   background-color: #f3f4f6;
-  height: 75px;
-  width: 75px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
 `
 const DarkMode = () => {

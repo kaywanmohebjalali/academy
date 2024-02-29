@@ -6,9 +6,9 @@ import DarkMode from "./DarkMode"
 import User from "../features/account/User"
 
 const NavBarStyled=styled.nav`
-height: 30vh;
+height: 20vh;
 background-color: #fff;
-    padding: 1rem 4rem;
+    padding: 0rem 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,6 +21,10 @@ display: flex;
 align-items: center;
 gap: 3rem;
 
+@media screen and (max-width: 1170px){
+  width: 60%;
+}
+
 `
 
 const StyleLeft=styled.nav`
@@ -30,6 +34,12 @@ width: 50%;
    align-items: center;
    justify-content: end;
    gap: 1.5rem;
+
+
+   @media screen and (max-width: 1170px){
+ 
+  width: 40%;
+}
    
 `
 
