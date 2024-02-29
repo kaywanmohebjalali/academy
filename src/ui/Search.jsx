@@ -1,9 +1,11 @@
 import { IoSearch } from "react-icons/io5"
 import styled from "styled-components"
+import Modal from "./Modal"
+import { useEffect, useState } from "react"
 
 
 const StyleSearch =styled.div`
-height: 100%;
+height: 80%;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -42,6 +44,38 @@ const InputSearch =styled.input`
 }
 `
 
+
+
+const StyleSearchModal =styled.div`
+
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+  padding: 1rem;
+  border-radius: 50px;
+  border: none;
+  outline: hidden;
+  position: relative;
+  background-color: #c9cbce;
+
+
+
+`
+
+const InputSearchModal =styled.input`
+  min-width: 400px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  transition: all 0.6s ;
+  background-color: #c9cbce;
+
+`
+
+
+
+
 const IconSearch =styled(IoSearch)`
   position: absolute;
   left: 10px;
@@ -55,12 +89,53 @@ const IconSearch =styled(IoSearch)`
 
 
 const Search = () => {
+  const [widthWindow,setWidthWindow]=useState(window.innerWidth)
+  function handleResize(){
+    setWidthWindow(window.innerWidth)
+    
+  }
+  useEffect(()=>{
+ window.addEventListener('resize',handleResize)
+
+ return()=> window.removeEventListener('resize',handleResize)
+},[])
+
+
   return (
-    <StyleSearch>
+   
+    <>
+
+
+   {     widthWindow>=1170?<StyleSearch>
       <InputSearch/>
       <IconSearch size='2.5rem' color="#555"/>
-      
-    </StyleSearch>
+      </StyleSearch>:
+
+
+<Modal>
+
+<Modal.Open opens='search'>
+  <StyleSearch>
+
+<IconSearch size='2.5rem' color="#555"/>
+  </StyleSearch>
+
+</Modal.Open >
+<Modal.Window name='search'>
+     <StyleSearchModal>
+      <InputSearchModal/>
+      <IconSearch size='2.5rem' color="#555"/>
+      </StyleSearchModal>
+</Modal.Window>
+
+</Modal>
+
+
+
+}
+</>
+  
+   
   )
 }
 

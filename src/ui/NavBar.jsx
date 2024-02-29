@@ -3,7 +3,7 @@ import Logo from "./Logo"
 import MenuBar from "./MenuBar"
 import Search from "./Search"
 import DarkMode from "./DarkMode"
-import User from "../features/account/User"
+import User from "../features/authentication/User"
 
 const NavBarStyled=styled.nav`
 height: 20vh;
