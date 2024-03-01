@@ -26,19 +26,15 @@ const StyleTooltip = styled.ul`
 `;
 
 const StyleTooltipSlid = styled.ul`
-  width: 200px;
-  padding: 2rem;
-  height: auto;
-
-  background-color: #fff;
+  width: 100%;
+  padding:1rem 1.3rem;
+  height: 0;
+ 
+ transition: all 0.1s ease-in;
   border: none;
   border-radius: 10px;
-  /* box-shadow: 1px 1px 1px #e4e1e1, -1px -1px 1px #e4e1e1; */
-  /* position: absolute; */
-
-  /* display: none; */
+   display: flex;
   flex-direction: column;
-
   gap: 1rem;
 `;
 
@@ -52,7 +48,7 @@ const StyleList = styled.ul`
 `;
 
 const StyleListSlid = styled.ul`
-  width: 250px;
+  width: 300px;
   position: absolute;
   top: 0;
   right: 0px;
@@ -60,11 +56,12 @@ const StyleListSlid = styled.ul`
   padding: 3rem;
   margin-right: -300px;
   display: flex;
+  
   flex-direction: column;
   transition: all 0.2s ease-in;
   background-color: #f3f4f6;
 
-  gap: 2rem;
+
 `;
 
 const IconMenu = styled(HiMenu)`
@@ -91,18 +88,22 @@ const StyleItem = styled.li`
 
 const StyleItemSlid = styled.li`
   display: flex;
-  align-items: center;
+  
   justify-content: space-between;
   gap: 0.6rem;
   font-size: 2rem;
   transition: all 0.1s;
+  
+
 
   &:hover {
     color: var(--color-primary);
   }
 
   &:hover ${StyleTooltipSlid} {
-    display: flex;
+    padding:2rem 1.3rem;
+
+    height: auto;
   }
 `;
 
@@ -117,8 +118,9 @@ const ArowIcon = styled(IoIosArrowDown)``;
 const ItemTooltip = styled.a`
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #000;
+  color: #6d6969;
   transition: all 0.3s;
+  font-size: 1.6rem;
   &:hover {
     color: var(--color-primary);
   }
@@ -138,7 +140,7 @@ const TopMenu = styled.div`
 `;
 
 const ParentSearch = styled.div`
-  padding-top: 4rem;
+  padding: 3rem 0;
   border-top: 1px solid #b8b2b2;
 `;
 const BottomMenu = styled.div`
