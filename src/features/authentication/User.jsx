@@ -41,7 +41,7 @@ const User = () => {
  <>
     {
       login?<StyleUserLogin>
-       <StyleImg src="/public/logo.jpg"/>
+       <StyleImg src="/public/default-user.png"/>
        <StyleName>kaywan mohebjalali</StyleName>
       </StyleUserLogin>:
       <StyleUser>

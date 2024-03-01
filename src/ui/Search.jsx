@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { IoSearch } from "react-icons/io5";
 import styled from "styled-components";
 import Modal from "./Modal";
 import { useEffect, useState } from "react";
 
 const StyleSearch = styled.div`
-  height: 80%;
+  height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,9 +15,14 @@ const StyleSearch = styled.div`
   outline: hidden;
   position: relative;
   background-color: #f3f4f6;
-  @media screen and (max-width: 1370px) {
+  @media screen and (max-width: 1386px) and (min-width: 1150px) {
     width: 65px;
     height: 65px;
+  }
+
+  @media screen and  (max-width: 1150px) {
+   width: 100%;
+   height: 45px;
   }
 `;
 
@@ -27,20 +33,28 @@ const InputSearch = styled.input`
   border: none;
   transition: all 0.6s;
   background-color: #f3f4f6;
-  margin-left: 1rem;
+  padding: 0 1rem;
 
   &:focus {
     max-width: 92%;
     width: 300px;
   }
 
-  @media screen and (max-width: 1370px) {
+  @media screen and (max-width: 1386px) and (min-width: 1150px) {
     display: none;
+  }
+  @media screen and  (max-width: 1150px) {
+   width: 150px;
+   
+   &:focus {
+    max-width: 92%;
+    width: 150px;
+  }
   }
 `;
 
 const StyleSearchModal = styled.div`
-  height: 100%;
+  height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +71,7 @@ const InputSearchModal = styled.input`
   width: 100%;
   height: 100%;
   font-size: 1.8rem;
-  margin-left: 1rem;
+  padding: 0 1rem;
   border: none;
   transition: all 0.6s;
   background-color: #f3f4f6;
@@ -65,7 +79,8 @@ const InputSearchModal = styled.input`
 
 const IconSearch = styled(IoSearch)``;
 
-const Search = () => {
+const Search = (props) => {
+  const {status}=props
   const [widthWindow, setWidthWindow] = useState(window.innerWidth);
   const [searchValue, setSearchValue] = useState(window.innerWidth);
 
@@ -82,11 +97,11 @@ const Search = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  console.log(searchValue);
+
 
   return (
     <>
-      {widthWindow >= 1370 ? (
+      {widthWindow >= 1370 || status ? (
         <StyleSearch>
           <InputSearch onChange={handleSearchValueInput} placeholder="جستجو" />
           <IconSearch size="2.5rem" color="#555" />

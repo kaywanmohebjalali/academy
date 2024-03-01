@@ -6,14 +6,14 @@ import DarkMode from "./DarkMode"
 import User from "../features/authentication/User"
 
 const NavBarStyled=styled.nav`
-height: 20vh;
+height: 13vh;
 background-color: #fff;
     padding: 0rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    @media screen and (max-width:1150px){
+    @media screen and (max-width:1170px){
       padding: 0rem 6rem;
     }
     `
@@ -25,13 +25,13 @@ display: flex;
 align-items: center;
 gap: 3rem;
 
-@media screen and (max-width: 1370px){
+@media screen and (max-width: 1385px){
   width: 90%;
   justify-content: space-between;
 
 }
 
-@media screen and (max-width: 1150px){
+@media screen and (max-width: 1170px){
   width: 50%;
   justify-content: space-between;
   flex-direction: row-reverse;
@@ -56,9 +56,8 @@ width: 50%;
    gap: 1.5rem;
 
 
-   @media screen and (max-width: 1150px){
+   @media screen and (max-width: 1170px){
  
-  /* width: 40%; */
   display: none;
 }
    
@@ -82,12 +81,16 @@ width: 400px;
 }
 `
 
+
+
 const NavBar = () => {
   return (
     <NavBarStyled>
+          
+
       <StyleRight>
 
-    <Logo/>
+    <Logo src='/logo.png'></Logo>
     <MenuBar/>
       </StyleRight>
 
