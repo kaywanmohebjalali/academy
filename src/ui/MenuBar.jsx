@@ -6,6 +6,7 @@ import { HiOutlineX } from "react-icons/hi";
 import { useRef, useState } from "react";
 import Logo from "./Logo";
 import Search from "./Search";
+import DarkMode from "./DarkMode";
 
 const StyleMenu = styled.nav``;
 
@@ -149,6 +150,21 @@ const BottomMenu = styled.div`
   z-index: -1000;
   backdrop-filter: blur(4px);
 `;
+
+
+
+const StyleDarkMode=styled.div`
+width: 100%;
+ color: #757373;
+  padding-top: 1rem;
+  border-top: 1px solid #aaa7a7;
+`
+
+
+
+
+
+
 
 const MenuBar = () => {
   const [showMenuBar, setShowMenuBar] = useState(false);
@@ -314,6 +330,10 @@ const MenuBar = () => {
             </StyleTitle>
             <ArowIcon size="1.6rem" />
           </StyleItemSlid>
+          <StyleDarkMode>
+
+          <DarkMode text={'تم تاریک'}/>
+          </StyleDarkMode>
         </StyleListSlid>
       </BottomMenu>
     </StyleMenu>

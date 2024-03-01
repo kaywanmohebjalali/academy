@@ -19,10 +19,13 @@ const StyleSearch = styled.div`
     width: 65px;
     height: 65px;
   }
-
+  
   @media screen and  (max-width: 1150px) {
+    justify-content: space-between;
    width: 100%;
    height: 45px;
+   background-color: #d6d8dd;
+
   }
 `;
 
@@ -45,7 +48,7 @@ const InputSearch = styled.input`
   }
   @media screen and  (max-width: 1150px) {
    width: 150px;
-   
+   background-color: #d5d8e0;
    &:focus {
     max-width: 92%;
     width: 150px;
@@ -77,7 +80,9 @@ const InputSearchModal = styled.input`
   background-color: #f3f4f6;
 `;
 
-const IconSearch = styled(IoSearch)``;
+const IconSearch = styled(IoSearch)`
+
+`;
 
 const Search = (props) => {
   const {status}=props

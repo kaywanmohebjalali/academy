@@ -6,6 +6,7 @@ import DarkMode from "./DarkMode"
 import User from "../features/authentication/User"
 
 const NavBarStyled=styled.nav`
+
 height: 13vh;
 background-color: #fff;
     padding: 0rem 2rem;
