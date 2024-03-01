@@ -28,14 +28,15 @@ const StyleTooltip = styled.ul`
 const StyleTooltipSlid = styled.ul`
   width: 200px;
   padding: 2rem;
+  height: auto;
 
   background-color: #fff;
   border: none;
   border-radius: 10px;
-  box-shadow: 1px 1px 1px #e4e1e1, -1px -1px 1px #e4e1e1;
-  position: absolute;
+  /* box-shadow: 1px 1px 1px #e4e1e1, -1px -1px 1px #e4e1e1; */
+  /* position: absolute; */
 
-  display: none;
+  /* display: none; */
   flex-direction: column;
 
   gap: 1rem;
@@ -100,7 +101,7 @@ const StyleItemSlid = styled.li`
     color: var(--color-primary);
   }
 
-  &:hover ${StyleTooltip} {
+  &:hover ${StyleTooltipSlid} {
     display: flex;
   }
 `;
@@ -143,7 +144,7 @@ const ParentSearch = styled.div`
 const BottomMenu = styled.div`
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -155,7 +156,7 @@ const BottomMenu = styled.div`
 
 const StyleDarkMode=styled.div`
 width: 100%;
-dis
+
   padding-top: 1rem;
   border-top: 1px solid #aaa7a7;
 `
