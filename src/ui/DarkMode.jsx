@@ -9,6 +9,8 @@ align-items: center;
   height: 60px;
   width: 60px;
   border-radius: 50%;
+
+  
 `
 const DarkMode = () => {
   return (
