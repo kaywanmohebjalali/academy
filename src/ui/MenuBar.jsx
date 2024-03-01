@@ -155,7 +155,7 @@ const BottomMenu = styled.div`
 
 const StyleDarkMode=styled.div`
 width: 100%;
- color: #757373;
+dis
   padding-top: 1rem;
   border-top: 1px solid #aaa7a7;
 `

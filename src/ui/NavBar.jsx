@@ -20,6 +20,7 @@ background-color: #fff;
     `
 
 const StyleRight=styled.nav`
+
 height: 40%;
 width: 60%;
 display: flex;
@@ -49,6 +50,7 @@ gap: 3rem;
 `
 
 const StyleLeft=styled.nav`
+
 height: 40%;
 width: 50%;
    display: flex;
