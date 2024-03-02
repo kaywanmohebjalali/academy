@@ -6,7 +6,8 @@ const StyleParentLogo=styled.div`
  display: flex;
  align-items: center;
  justify-content: center;
- /* gap: 1rem; */
+ transform: translateX(-25%);
+
 
 `
 const StyleLogo=styled.img`
@@ -15,7 +16,7 @@ height: 50px;
 `
 
 const StyleTitleLogo=styled.p`
-
+margin-right: 1rem;
 `
 
 const Logo = (props) => {
@@ -24,10 +25,14 @@ const Logo = (props) => {
     <StyleParentLogo >
 
      <StyleLogo src={src}/>
-     <StyleTitleLogo>
+     
+    {children!=''&& <StyleTitleLogo>
       {children}
-     </StyleTitleLogo>
-    </StyleParentLogo>
+     </StyleTitleLogo>}
+  
+
+
+</StyleParentLogo>
   )
 }
 
