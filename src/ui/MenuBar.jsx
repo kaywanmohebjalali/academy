@@ -92,7 +92,7 @@ const StyleItemSlid = styled.li`
   justify-content: space-between;
   gap: 0.6rem;
   font-size: 2rem;
-  transition: all 0.1s;
+  transition: all 0.2s;
   
 
 
@@ -152,6 +152,7 @@ const BottomMenu = styled.div`
   left: 0;
   z-index: -1000;
   backdrop-filter: blur(4px);
+  background-color: transparent;
 `;
 
 
@@ -181,7 +182,6 @@ const MenuBar = () => {
         onClick={() => {
           menuRef.current.style.marginRight = "0";
           menuParentRef.current.style.zIndex = "0";
-          menuParentRef.current.style.backgroundColor = "rgba(0,0,0,0.2)";
         }}
       />
 
@@ -258,7 +258,6 @@ const MenuBar = () => {
                 menuRef.current.style.marginRight = "-300px";
                 menuParentRef.current.style.zIndex = "-1000";
 
-                menuParentRef.current.style.backgroundColor = "transparent";
               }}
             />
             <Logo src="/public/logo.png">
