@@ -27,15 +27,16 @@ const StyleTooltip = styled.ul`
 
 const StyleTooltipSlid = styled.ul`
   width: 100%;
-  padding:1rem 1.3rem;
+  padding: 1rem 1.3rem;
   height: 0;
- 
- transition: all 0.1s ease-in;
+
+  transition: all 0.2s ease-in;
   border: none;
   border-radius: 10px;
-   display: flex;
+  display: flex;
   flex-direction: column;
   gap: 1rem;
+
 `;
 
 const StyleList = styled.ul`
@@ -58,12 +59,15 @@ const StyleListSlid = styled.ul`
   padding: 3rem;
   margin-right: -300px;
   display: flex;
-  
   flex-direction: column;
   transition: all 0.2s ease-in;
   background-color: #f3f4f6;
+   position: relative;
 
-
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    margin-right: -500px;
+  }
 `;
 
 const IconMenu = styled(HiMenu)`
@@ -90,20 +94,15 @@ const StyleItem = styled.li`
 
 const StyleItemSlid = styled.li`
   display: flex;
-  
+
   justify-content: space-between;
   gap: 0.6rem;
   font-size: 2rem;
   transition: all 0.1s;
- 
-  
-
 
   &:hover {
     color: var(--color-primary);
   }
-
-
 `;
 
 const StyleTitle = styled.a`
@@ -113,7 +112,6 @@ const StyleTitle = styled.a`
 `;
 
 const ArowIcon = styled(IoIosArrowDown)``;
-
 
 const ItemTooltip = styled.a`
   overflow: hidden;
@@ -127,7 +125,6 @@ const ItemTooltip = styled.a`
 `;
 
 const StyleParentTextLogo = styled.div``;
-
 
 const StyleItemTitleLogo = styled.div`
   font-size: 2.5rem;
@@ -156,20 +153,12 @@ const BottomMenu = styled.div`
   backdrop-filter: blur(4px);
 `;
 
-
-
-const StyleDarkMode=styled.div`
-width: 100%;
+const StyleDarkMode = styled.div`
+  width: 100%;
 
   padding-top: 1rem;
   border-top: 1px solid #aaa7a7;
-`
-
-
-
-
-
-
+`;
 
 const MenuBar = () => {
   const [showMenuBar, setShowMenuBar] = useState(false);
@@ -181,16 +170,16 @@ const MenuBar = () => {
   const toolTopAiRef = useRef("");
   const toolTopArticleRef = useRef("");
 
-
-   function dropMenuItem(element){
+  function dropMenuItem(element) {
     let css_obj = getComputedStyle(element);
-              let height=css_obj?.height
-     if(height=='20px'){
-      element.style.height='auto'
-              }else{
-                element.style.height='0'
-   }}
-   
+    let height = css_obj?.height;
+    let childCount = element.children?.length;
+    if (height == "20px") {
+      element.style.height = `${childCount * 37}px`;
+    } else {
+      element.style.height = "0";
+    }
+  }
 
   return (
     <StyleMenu>
@@ -199,7 +188,6 @@ const MenuBar = () => {
         onClick={() => {
           menuRef.current.style.marginRight = "0";
           menuParentRef.current.style.zIndex = "0";
-          menuParentRef.current.style.backgroundColor = "rgba(0,0,0,0.2)";
         }}
       />
 
@@ -273,7 +261,7 @@ const MenuBar = () => {
             <HiOutlineX
               size="2.5rem"
               onClick={() => {
-                menuRef.current.style.marginRight = "-300px";
+                menuRef.current.style.marginRight = "-500px";
                 menuParentRef.current.style.zIndex = "-1000";
 
                 menuParentRef.current.style.backgroundColor = "transparent";
@@ -290,7 +278,9 @@ const MenuBar = () => {
             <Search status={true} />
           </ParentSearch>
 
-          <StyleItemSlid onClick={()=>dropMenuItem(toolTopFrontEndRef.current)}>
+          <StyleItemSlid
+            onClick={() => dropMenuItem(toolTopFrontEndRef.current)}
+          >
             <StyleTitle>
               {" "}
               فرانت اند
@@ -302,9 +292,10 @@ const MenuBar = () => {
             </StyleTitle>
             <ArowIcon size="1.6rem" />
           </StyleItemSlid>
-        
 
-          <StyleItemSlid onClick={()=>dropMenuItem(toolTopBackEndRef.current)}>
+          <StyleItemSlid
+            onClick={() => dropMenuItem(toolTopBackEndRef.current)}
+          >
             <StyleTitle>
               {" "}
               بک اند
@@ -317,7 +308,9 @@ const MenuBar = () => {
             <ArowIcon size="1.6rem" />
           </StyleItemSlid>
 
-          <StyleItemSlid onClick={()=>dropMenuItem(toolTopSecurityRef.current)}>
+          <StyleItemSlid
+            onClick={() => dropMenuItem(toolTopSecurityRef.current)}
+          >
             <StyleTitle>
               امنیت
               <StyleTooltipSlid ref={toolTopSecurityRef}>
@@ -329,34 +322,52 @@ const MenuBar = () => {
             <ArowIcon size="1.6rem" />
           </StyleItemSlid>
 
-          <StyleItemSlid onClick={()=>dropMenuItem(toolTopAiRef.current)}>
+          <StyleItemSlid onClick={() => dropMenuItem(toolTopAiRef.current)}>
             <StyleTitle>
               هوش مصنوعی
               <StyleTooltipSlid ref={toolTopAiRef}>
                 <ItemTooltip>اموزش جاوااسکریپت</ItemTooltip>
                 <ItemTooltip>اموزش html</ItemTooltip>
                 <ItemTooltip>اموزش css</ItemTooltip>
-              </StyleTooltipSlid>
-            </StyleTitle>
-            <ArowIcon size="1.6rem" />
-          </StyleItemSlid>
-
-          <StyleItemSlid onClick={()=>dropMenuItem(toolTopArticleRef.current)}>
-            <StyleTitle>
-              مقالات
-              <StyleTooltipSlid ref={toolTopArticleRef}>
-                <ItemTooltip>اموزش جاوااسکریپت</ItemTooltip>
-                <ItemTooltip>اموزش html</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
                 <ItemTooltip>اموزش css</ItemTooltip>
               </StyleTooltipSlid>
             </StyleTitle>
             <ArowIcon size="1.6rem" />
           </StyleItemSlid>
 
+          <StyleItemSlid
+            onClick={() => dropMenuItem(toolTopArticleRef.current)}
+          >
+            <StyleTitle>
+              مقالات
+              <StyleTooltipSlid ref={toolTopArticleRef}>
+                <ItemTooltip>اموزش جاوااسکریپت</ItemTooltip>
+                <ItemTooltip>اموزش html</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+                <ItemTooltip>اموزش css</ItemTooltip>
+              </StyleTooltipSlid>
+            </StyleTitle>
+            <ArowIcon size="1.6rem" />
+          </StyleItemSlid>
 
           <StyleDarkMode>
-
-          <DarkMode text={'تم تاریک'}/>
+            <DarkMode text={"تم تاریک"} />
           </StyleDarkMode>
         </StyleListSlid>
       </BottomMenu>
