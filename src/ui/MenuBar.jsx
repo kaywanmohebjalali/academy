@@ -93,6 +93,7 @@ const StyleItemSlid = styled.li`
   gap: 0.6rem;
   font-size: 2rem;
   transition: all 0.1s;
+ 
   
 
 
@@ -100,11 +101,7 @@ const StyleItemSlid = styled.li`
     color: var(--color-primary);
   }
 
-  &:hover ${StyleTooltipSlid} {
-    padding:2rem 1.3rem;
 
-    height: auto;
-  }
 `;
 
 const StyleTitle = styled.a`
@@ -114,6 +111,7 @@ const StyleTitle = styled.a`
 `;
 
 const ArowIcon = styled(IoIosArrowDown)``;
+
 
 const ItemTooltip = styled.a`
   overflow: hidden;
@@ -127,6 +125,8 @@ const ItemTooltip = styled.a`
 `;
 
 const StyleParentTextLogo = styled.div``;
+
+
 const StyleItemTitleLogo = styled.div`
   font-size: 2.5rem;
   font-weight: 600;
@@ -173,6 +173,22 @@ const MenuBar = () => {
   const [showMenuBar, setShowMenuBar] = useState(false);
   const menuRef = useRef("");
   const menuParentRef = useRef("");
+  const toolTopFrontEndRef = useRef("");
+  const toolTopBackEndRef = useRef("");
+  const toolTopSecurityRef = useRef("");
+  const toolTopAiRef = useRef("");
+  const toolTopArticleRef = useRef("");
+
+
+   function dropMenuItem(element){
+    let css_obj = getComputedStyle(element);
+              let height=css_obj?.height
+     if(height=='20px'){
+      element.style.height='auto'
+              }else{
+                element.style.height='0'
+   }}
+   
 
   return (
     <StyleMenu>
@@ -272,11 +288,11 @@ const MenuBar = () => {
             <Search status={true} />
           </ParentSearch>
 
-          <StyleItemSlid>
+          <StyleItemSlid onClick={()=>dropMenuItem(toolTopFrontEndRef.current)}>
             <StyleTitle>
               {" "}
               فرانت اند
-              <StyleTooltipSlid>
+              <StyleTooltipSlid ref={toolTopFrontEndRef}>
                 <ItemTooltip>اموزش جاوااسکریپت</ItemTooltip>
                 <ItemTooltip>اموزش html</ItemTooltip>
                 <ItemTooltip>اموزش css</ItemTooltip>
@@ -284,12 +300,13 @@ const MenuBar = () => {
             </StyleTitle>
             <ArowIcon size="1.6rem" />
           </StyleItemSlid>
+        
 
-          <StyleItemSlid>
+          <StyleItemSlid onClick={()=>dropMenuItem(toolTopBackEndRef.current)}>
             <StyleTitle>
               {" "}
               بک اند
-              <StyleTooltipSlid>
+              <StyleTooltipSlid ref={toolTopBackEndRef}>
                 <ItemTooltip>اموزش جاوااسکریپت</ItemTooltip>
                 <ItemTooltip>اموزش html</ItemTooltip>
                 <ItemTooltip>اموزش css</ItemTooltip>
@@ -298,10 +315,10 @@ const MenuBar = () => {
             <ArowIcon size="1.6rem" />
           </StyleItemSlid>
 
-          <StyleItemSlid>
+          <StyleItemSlid onClick={()=>dropMenuItem(toolTopSecurityRef.current)}>
             <StyleTitle>
               امنیت
-              <StyleTooltipSlid>
+              <StyleTooltipSlid ref={toolTopSecurityRef}>
                 <ItemTooltip>اموزش جاوااسکریپت</ItemTooltip>
                 <ItemTooltip>اموزش html</ItemTooltip>
                 <ItemTooltip>اموزش css</ItemTooltip>
@@ -310,10 +327,10 @@ const MenuBar = () => {
             <ArowIcon size="1.6rem" />
           </StyleItemSlid>
 
-          <StyleItemSlid>
+          <StyleItemSlid onClick={()=>dropMenuItem(toolTopAiRef.current)}>
             <StyleTitle>
               هوش مصنوعی
-              <StyleTooltipSlid>
+              <StyleTooltipSlid ref={toolTopAiRef}>
                 <ItemTooltip>اموزش جاوااسکریپت</ItemTooltip>
                 <ItemTooltip>اموزش html</ItemTooltip>
                 <ItemTooltip>اموزش css</ItemTooltip>
@@ -322,10 +339,10 @@ const MenuBar = () => {
             <ArowIcon size="1.6rem" />
           </StyleItemSlid>
 
-          <StyleItemSlid>
+          <StyleItemSlid onClick={()=>dropMenuItem(toolTopArticleRef.current)}>
             <StyleTitle>
               مقالات
-              <StyleTooltipSlid>
+              <StyleTooltipSlid ref={toolTopArticleRef}>
                 <ItemTooltip>اموزش جاوااسکریپت</ItemTooltip>
                 <ItemTooltip>اموزش html</ItemTooltip>
                 <ItemTooltip>اموزش css</ItemTooltip>
@@ -333,6 +350,8 @@ const MenuBar = () => {
             </StyleTitle>
             <ArowIcon size="1.6rem" />
           </StyleItemSlid>
+
+
           <StyleDarkMode>
 
           <DarkMode text={'تم تاریک'}/>
