@@ -6,7 +6,7 @@ const StyleParentLogo=styled.div`
  display: flex;
  align-items: center;
  justify-content: center;
- gap: 1rem;
+ /* gap: 1rem; */
 
 `
 const StyleLogo=styled.img`
@@ -21,7 +21,7 @@ const StyleTitleLogo=styled.p`
 const Logo = (props) => {
   const {children='' ,src=''}=props
   return (
-    <StyleParentLogo>
+    <StyleParentLogo  className="tttttttttt">
 
      <StyleLogo src={src}/>
      <StyleTitleLogo>

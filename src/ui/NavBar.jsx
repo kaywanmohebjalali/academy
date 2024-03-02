@@ -1,115 +1,94 @@
-import styled from "styled-components"
-import Logo from "./Logo"
-import MenuBar from "./MenuBar"
-import Search from "./Search"
-import DarkMode from "./DarkMode"
-import User from "../features/authentication/User"
+import styled from "styled-components";
+import Logo from "./Logo";
+import MenuBar from "./MenuBar";
+import Search from "./Search";
+import DarkMode from "./DarkMode";
+import User from "../features/authentication/User";
 
-const NavBarStyled=styled.nav`
+const NavBarStyled = styled.nav`
+  height: 13vh;
+  background-color: #fff;
+  padding: 0rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-height: 13vh;
-background-color: #fff;
-    padding: 0rem 2rem;
-    display: flex;
-    align-items: center;
+  @media screen and (max-width: 1170px) {
+    padding: 0rem 4rem;
+  }
+`;
+
+const StyleRight = styled.nav`
+  height: 40%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  @media screen and (max-width: 1385px) {
+    width: 90%;
     justify-content: space-between;
+  }
 
-    @media screen and (max-width:1170px){
-      padding: 0rem 6rem;
-    }
-    `
+  @media screen and (max-width: 1170px) {
+    width: 50%;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding-left: 3rem;
+  }
 
-const StyleRight=styled.nav`
+  @media screen and (max-width: 750px) {
+    padding-left: 0rem;
+  }
+`;
 
-height: 40%;
-width: 60%;
-display: flex;
-align-items: center;
-gap: 3rem;
-
-@media screen and (max-width: 1385px){
-  width: 90%;
-  justify-content: space-between;
-
-}
-
-@media screen and (max-width: 1170px){
+const StyleLeft = styled.nav`
+  height: 40%;
   width: 50%;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-  padding-left: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1.5rem;
 
-}
+  @media screen and (max-width: 1170px) {
+    display: none;
+  }
+`;
 
-@media screen and (max-width: 750px){
- 
-  padding-left: 0rem;
+const StyleUser = styled.div`
+  height: 40%;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1.5rem;
+  margin-right: 1rem;
 
-}
+  @media screen and (max-width: 1150px) {
+    justify-content: end;
 
-`
-
-const StyleLeft=styled.nav`
-
-height: 40%;
-width: 50%;
-   display: flex;
-   align-items: center;
-   justify-content: end;
-   gap: 1.5rem;
-
-
-   @media screen and (max-width: 1170px){
- 
-  display: none;
-}
-   
-`
-
-const StyleUser=styled.div`
-height: 40%;
-width: 400px;
-   display: flex;
-   align-items: center;
-   justify-content: end;
-   gap: 1.5rem;
-   margin-right: 1rem;
-   
-   
-   @media screen and (max-width: 1150px){
-     justify-content: end;
- 
-  width: 50%;
- 
-}
-`
-
-
+    width: 50%;
+  }
+`;
 
 const NavBar = () => {
   return (
     <NavBarStyled>
-          
-
       <StyleRight>
-
-    <Logo src='/logo.png'></Logo>
-    <MenuBar/>
+        <Logo src="/logo.png"></Logo>
+        <MenuBar />
       </StyleRight>
 
       <StyleLeft>
-
-    <Search/>
-    <DarkMode/>
+        <Search />
+        <DarkMode />
       </StyleLeft>
 
       <StyleUser>
-
-    <User/>
+        <User />
       </StyleUser>
-
     </NavBarStyled>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
