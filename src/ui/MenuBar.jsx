@@ -49,6 +49,8 @@ const StyleList = styled.ul`
 
 const StyleListSlid = styled.ul`
   width: 300px;
+  height: 100vh;
+  overflow-y: auto;
   position: absolute;
   top: 0;
   right: 0px;
