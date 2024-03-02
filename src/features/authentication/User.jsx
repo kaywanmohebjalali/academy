@@ -44,7 +44,7 @@ const User = () => {
     {
       login?<StyleUserLogin>
        <StyleName>کیوان محب جلالی</StyleName>
-       <StyleImg src="/public/default-user.png"/>
+       <StyleImg src="/default-user.png"/>
       </StyleUserLogin>:
       <StyleUser>
         <IoPerson size='2.5rem'/>

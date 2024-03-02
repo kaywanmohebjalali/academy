@@ -279,7 +279,7 @@ const MenuBar = () => {
                 menuParentRef.current.style.backgroundColor = "transparent";
               }}
             />
-            <Logo src="/public/logo.png">
+            <Logo src="/logo.png">
               <StyleParentTextLogo>
                 <StyleItemTitleLogo>سنه لرن</StyleItemTitleLogo>
                 <StyleItemTextLogo>snalearn.ir</StyleItemTextLogo>

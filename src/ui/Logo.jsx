@@ -21,7 +21,7 @@ const StyleTitleLogo=styled.p`
 const Logo = (props) => {
   const {children='' ,src=''}=props
   return (
-    <StyleParentLogo  className="tttttttttt">
+    <StyleParentLogo >
 
      <StyleLogo src={src}/>
      <StyleTitleLogo>

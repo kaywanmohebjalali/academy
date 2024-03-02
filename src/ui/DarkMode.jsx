@@ -26,8 +26,7 @@ const StyleText=styled.p`
 `
 const DarkMode = (props) => {
   const {text=''}=props
-  console.log(props);
-  // console.log(Children);
+
   return (
     <StyleDarkMode>
        <IoMoonOutline size='2.5rem'/>
